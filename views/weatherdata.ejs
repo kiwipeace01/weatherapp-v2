@@ -1,0 +1,78 @@
+        <p>
+        <br>
+        </p>
+        <div class="second">
+            <a href="/" class="btn-lg btn-info btn-" role="button">Back to search page</a>
+        </div>
+        <div class="top" style="font-size:25px;">
+            <div class="row">
+                <div class="col-lg-6">
+
+               <table>
+                   <tr>
+                       <th>
+                        <h2><b>City:</b></h2>
+                       </th>
+                       <td>
+                        <h2> <%=city%></h2>
+                       </td>
+                   </tr>
+                    <tr>
+                        <th>
+                         <h2>Longitude:&nbsp;</h2>
+                        </th>
+                        <td>
+                         <h2> <%=coord.lon%>° </h2>
+                        </td>
+                        </tr>
+                        <tr>
+                            <th>
+                             <h2>Latitude:&nbsp;</h2>
+                            </th>
+                            <td>
+                             <h2> <%=coord.lat%>°</h2>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                             <h2>Temperature:&nbsp;</h2>
+                            </th>
+                            <td>
+                             <h2><%=temp%>° C</h2>
+                            </td>
+                            </tr> 
+                        <tr>
+                            <th>
+                             <h2>Feels like:&nbsp;</h2>
+                            </th>
+                            <td>
+                             <h2><%=feels%> °C</h2>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                             <h2>Humidity:&nbsp;</h2>
+                            </th>
+                            <td>
+                             <h2> <%=humid%> %</h2>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                             <h2>Wind speed:&nbsp;</h2>
+                            </th>
+                            <td>
+                             <h2><%=winds%> m/s</h2>
+                            </td>
+                        </tr>             
+                        
+               </table>     
+           
+                </div>
+                <div id="im" class="col-lg-6">
+            <img class="image" src="<%=icon%>" />
+            <h3><%=forecast%></h3>
+        </div>
+            </div>
+           
+        </div>
