@@ -1,0 +1,133 @@
+<html>
+    <!-- CSS only -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Secular+One&display=swap" rel="stylesheet">
+<style>
+    .top{
+        font-family: 'Secular One', sans-serif;
+       /* font-family: 'Abril Fatface', cursive;*/
+        margin:100px 600px 100px 400px;
+        padding:100px 100px 100px 150px;
+        background-color: rgb(25, 174, 219);
+        border-radius: 25px;
+        text-align: left;
+    }
+    .image{
+        width:70%;
+        height:90%;
+    }
+    #im{
+        text-align: center;
+    }
+    td{
+        color: azure;
+    }
+    th,
+      td {
+        padding: 10px;
+      }
+    .second{
+        text-align: center;
+        padding-right: 200px;
+    }
+    .btn-lg{
+        font-size: xx-large;
+
+    }
+</style>
+
+    <body>
+        <div class="top">
+            <div class="row">
+                <div class="col-lg-6">
+
+               <table>
+                   <tr>
+                       <th>
+                        <h2><b>City:</b></h2>
+                       </th>
+                       <td>
+                        <h2> <%=city%></h2>
+                       </td>
+                   </tr>
+                    <tr>
+                        <th>
+                         <h2>Longitude:&nbsp;</h2>
+                        </th>
+                        <td>
+                         <h2> <%=coord.lon%>° </h2>
+                        </td>
+                        </tr>
+                        <tr>
+                            <th>
+                             <h2>Latitude:&nbsp;</h2>
+                            </th>
+                            <td>
+                             <h2> <%=coord.lat%>°</h2>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                             <h2>Temperature:&nbsp;</h2>
+                            </th>
+                            <td>
+                             <h2><%=temp%>° C</h2>
+                            </td>
+                            </tr> 
+                        <tr>
+                            <th>
+                             <h2>Feels like:&nbsp;</h2>
+                            </th>
+                            <td>
+                             <h2><%=feels%> °C</h2>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                             <h2>Humidity:&nbsp;</h2>
+                            </th>
+                            <td>
+                             <h2> <%=humid%> %</h2>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                             <h2>Wind speed:&nbsp;</h2>
+                            </th>
+                            <td>
+                             <h2><%=winds%> m/s</h2>
+                            </td>
+                        </tr>             
+                        
+               </table>     
+           
+                </div>
+                <div id="im" class="col-lg-6">
+            <img class="image" src="<%=icon%>" />
+            <h3><%=forecast%></h3>
+        </div>
+            </div>
+           
+        </div>
+        <div class="second">
+            <a href="/" class="btn btn-info btn-lg" role="button">Back</a>
+            <form action="/daysforecast" method="POST">
+                <input  id="city" type="hidden" name="city" value="<%= city%>" >
+                <button class="btn btn-info btn-lg" type="submit">5days</button>
+            </form>
+
+            <form action="/today" method="POST">
+                <input  id="city" type="hidden" name="city" value="<%= city%>" >
+                <button class="btn btn-info btn-lg" type="submit">TODAY</button>
+            </form>
+       
+        
+        </div>
+
+    </body>
+</html>
